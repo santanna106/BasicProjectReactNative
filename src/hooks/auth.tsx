@@ -47,6 +47,18 @@ function AuthProvider({children}:AuthProviderProps){
     const userStorageKey = '@gofinances:user';
     
     async function signInWithGoogle(){
+        //Login Fake
+        const userLogged = {
+            id:'1',
+            email:'userInfo.email',
+            name:'userInfo.given_name',
+            photo:'userInfo.picture'
+        }
+        setUser(userLogged);
+        
+
+
+        /* Login com o google - Descomentar 
         try{
             const RESONSE_TYPE='token';
             const SCOPE=encodeURI('profile email');
@@ -74,6 +86,7 @@ function AuthProvider({children}:AuthProviderProps){
         }catch (error){
             throw new Error(error as string);
         }
+        */
 
     }
 
